@@ -1,0 +1,92 @@
+// 子级菜单样式
+.el-submenu.el-menu .el-menu-item {
+	font-size: 14px;
+	padding-left: 50px !important;
+	&.is-active {
+		background-color: rgba(245, 108, 108, 0.2) !important;
+	}
+}
+// 一级菜单样式
+li.el-submenu {
+	&.is-active.is-opened .el-submenu__title {
+		background-color: $mainColor !important;
+	}
+}
+
+.close {
+	.el-submenu {
+		&.is-opened {
+			> .el-submenu__title {
+				background-color: $mainColor !important;
+			}
+		}
+	}
+}
+
+.el-menu--vertical {
+	.el-menu {
+		background-color: $mainColor !important;
+	}
+	.el-menu-item {
+		line-height: 56px;
+	}
+	.el-menu-item:hover {
+		background-color: $mainColor !important;
+	}
+}
+
+div.el-form-item {
+	bottom: 22px;
+}
+
+// 表格样式
+div.el-table {
+	td,
+	th {
+		text-align: center !important;
+	}
+	th {
+		font-weight: bold;
+		color: #344a5f;
+	}
+	td {
+		font-size: 14px;
+	}
+}
+// div.el-table {
+// 	table,
+// 	tbody,
+// 	thead {
+// 		width: 100% !important;
+// 		text-align: center;
+// 	}
+// 	colgroup {
+// 		position: absolute;
+// 		width: 100% !important;
+// 		display: flex;
+// 	}
+// 	col {
+// 		flex: 1;
+// 		text-align: center;
+// 	}
+// }
+
+// Dialog样式
+.el-dialog_body {
+	padding: 30px 47px !important;
+}
+.el-dialog__footer {
+	text-align: center !important;
+	padding-bottom: 50px !important;
+	.el-button {
+		width: 150px;
+		margin: 0 11px !important;
+	}
+}
+
+// form样式
+.el-form {
+	.el-form-item:last-child {
+		margin-bottom: 0 !important;
+	}
+}

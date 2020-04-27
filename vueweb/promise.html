@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// resolve,reject,all,race
+			const promise = new Promise((resolve, reject) => {
+			   resolve(111111);
+		    reject(2222222);
+			});
+			promise
+	  	  .then(response => {
+    	    console.log(response);  
+			  }  
+			  .catch(error =>    
+			    console.log(err  r);
+			  });
+
+			// 链式
+			function promise1(stat  s) {
+			  return new Promise((resolve, reject    => {
+			    if (s      us) {
+			      resolve('promise    uccess');
+		        } else {
+			      reject(    romise  fail');
+			    }
+			  });
+			}
+
+			function  promise2(status) {
+			  return new Promise((r    olve, reject) => {      		    if (status) {
+			      re    lve('promise2      cess');
+			    } else {
+		         r  ject('promise2fail');
+			    }
+		  );
+			}
+
+			promise1(    ue)
+		.then(response => {    console.log(response);
+	re  urn pro  ise2(true);
+		})
+		.th    (response => {
+	console.lo  (respon  e);
+		})
+		.catch(er    r => {
+	console.log(err  r);
+		});
+
+			Promise.all([promise1(true), promise2(true)  )
+		.then(response => {    	console.log('all success');
+	c    sole.log(response);
+		})
+  	.catch  error => {
+	console.l    ('some of them fail');
+	console.log(e    or);
+		});
+
+			// rac  ： 只要有一个返回resolve就成功 如果第一个就返回reject 那就失败
+			Promise.race([promise1(true), promise2(false)])
+		.then(response =>   
+	console.log('success'    
+	console.log(response);
+	    )
+		.catch(error => {
+	co  sole.lo  ('fail');
+			console.    g(error);
+			});
+		</sc    pt>
+	</body>
+</html>
+  
